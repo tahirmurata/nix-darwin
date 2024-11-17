@@ -5,6 +5,11 @@
 
 <p align="center">Configuration files for macOS using Nix</p>
 
+## Features
+- Uses [Nix](https://nixos.org/) as the package manager for reproducible builds
+- Leverages [nix-darwin](https://github.com/LnL7/nix-darwin) for macOS system configuration and Homebrew casks
+- Integrates [nix-homebrew](https://github.com/zhaofengli/nix-homebrew) to manage Homebrew installation via Nix
+
 ## Usage
 Go to the dotfiles repo: [dotfiles](
     https://github.com/pastc/dotfiles
