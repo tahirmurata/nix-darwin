@@ -14,6 +14,7 @@
     nil
     nixpkgs-fmt
     go
+    gopls
     templ
 
     # Programming cli
@@ -21,11 +22,16 @@
     wgo
 
     # CLI tools
+
+    # General
     btop
     fastfetch
     bat
     lazygit
     ripgrep
+
+    # Encryption
+    age
   ];
 
   environment.variables.EDITOR = "nvim";
