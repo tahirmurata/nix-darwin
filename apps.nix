@@ -12,7 +12,8 @@
 
     # Programming languages
     nil
-    nixpkgs-fmt
+    nixd
+    nixfmt-rfc-style
     go
     gopls
     templ
@@ -29,6 +30,9 @@
     bat
     lazygit
     ripgrep
+
+    # File manager
+    yazi
 
     # Encryption
     age
