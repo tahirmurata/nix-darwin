@@ -2,14 +2,7 @@
   description = "Nix for pastc";
 
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    # ⓘ defines the repository for nixpkgs and nix-darwin
-    # ! temporary fix for nixpkgs & nix-darwin build fail on :
-    #  error: builder for '/nix/store/86459mqpi8i02zf182y96964yajz9v4d-darwin-manual-html.drv' failed with exit code 1;
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    # ✏️ This error is caused by the new redirects system that got added to nixos-render-docs yesterday in this commit to nixpkgs. Running the installer with the commit pinned to the commit before the redirects system was introduced, I was able to install nix-darwin successfully. then updated the nixpkgs url before installation.
-    # 🌐 https://github.com/LnL7/nix-darwin/issues/1176#issuecomment-2480752009
-    nixpkgs.url = "github:NixOS/nixpkgs/8809585e6937d0b07fc066792c8c9abf9c3fe5c4";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
