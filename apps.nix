@@ -7,6 +7,9 @@
     vim
     neovim
 
+    # Prompt
+    pure-prompt
+
     # Programming languages
     nil
     nixpkgs-fmt
