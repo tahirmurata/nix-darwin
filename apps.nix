@@ -11,6 +11,7 @@
     pure-prompt
 
     # Programming languages
+    nodejs_23
     nil
     nixd
     nixfmt-rfc-style
@@ -57,6 +58,7 @@
       "iina"
       "alt-tab"
       "tailscale"
+      "altserver"
     ];
   };
 }
