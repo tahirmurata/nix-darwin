@@ -60,5 +60,8 @@
       "tailscale"
       "altserver"
     ];
+    masApps = {
+      "Amphetamine" = 937984704;
+    };
   };
 }
