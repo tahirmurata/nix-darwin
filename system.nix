@@ -9,11 +9,12 @@
 #
 ###################################################################################
 {
-  power = {
-    sleep = {
-      display = "never"; # Never turn off the display
-    };
-  };
+  # power = {
+  #   sleep = {
+  #     display = "never"; # Never turn off the display
+  #     computer = "never"; # Never put the computer to sleep
+  #   };
+  # };
 
   system = {
     stateVersion = 5;
