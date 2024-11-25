@@ -29,9 +29,12 @@
     btop
     fastfetch
     bat
-    lazygit
     ripgrep
     libwebp
+
+    # Git
+    gh
+    lazygit
 
     # TUI Apps
     circumflex
