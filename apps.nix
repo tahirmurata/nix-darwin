@@ -31,6 +31,10 @@
     bat
     lazygit
     ripgrep
+    libwebp
+
+    # TUI Apps
+    circumflex
 
     # File manager
     yazi
@@ -59,9 +63,12 @@
       "alt-tab"
       "tailscale"
       "altserver"
+      "transmission"
+      "jordanbaird-ice"
     ];
     masApps = {
       "Amphetamine" = 937984704;
+      "Klack" = 6446206067;
     };
   };
 }
