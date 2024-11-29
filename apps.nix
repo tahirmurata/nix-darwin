@@ -5,7 +5,6 @@
   environment.systemPackages = with pkgs; [
     # Development tools
     vim
-    neovim
 
     # Prompt
     pure-prompt
@@ -68,6 +67,8 @@
       "altserver"
       "transmission"
       "jordanbaird-ice"
+      "orbstack"
+      "halloy"
     ];
     masApps = {
       "Amphetamine" = 937984704;
