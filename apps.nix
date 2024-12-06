@@ -17,6 +17,8 @@
     go
     gopls
     templ
+    typst
+    typstyle
 
     # Programming cli
     pnpm
@@ -69,6 +71,7 @@
       "jordanbaird-ice"
       "orbstack"
       "halloy"
+      "figma"
     ];
     masApps = {
       "Amphetamine" = 937984704;
