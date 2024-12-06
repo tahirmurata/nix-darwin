@@ -74,6 +74,7 @@
           "/System/Applications/System Settings.app"
           "/Applications/Firefox.app"
           "/Applications/kitty.app"
+          "/Applications/Visual Studio Code.app"
         ];
         persistent-others = null;
       };
