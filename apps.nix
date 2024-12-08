@@ -19,7 +19,7 @@
     gopls
     templ
     typst
-    typstyle
+    tinymist
 
     # Programming cli
     pnpm
