@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     # Development tools
     vim
+    helix
 
     # Prompt
     pure-prompt
