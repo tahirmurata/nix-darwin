@@ -17,6 +17,7 @@
     nixfmt-rfc-style
     go
     gopls
+    gotools
     templ
     typst
     tinymist
