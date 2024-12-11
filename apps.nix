@@ -5,14 +5,13 @@
   environment.systemPackages = with pkgs; [
     # Development tools
     vim
-    helix
 
     # Prompt
     pure-prompt
 
     # Programming languages
     nodejs_23
-    nil
+    rustup
     nixd
     nixfmt-rfc-style
     go
