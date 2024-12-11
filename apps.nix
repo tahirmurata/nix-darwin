@@ -13,7 +13,6 @@
     nodejs_23
     rustup
     nixd
-    nixfmt-rfc-style
     go
     gopls
     gotools
