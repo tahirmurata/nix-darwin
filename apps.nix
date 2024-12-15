@@ -58,7 +58,6 @@
     # updates homebrew packages on activation,
     # can make darwin-rebuild much slower (otherwise i'd forget to do it ever though)
     casks = [
-      "hammerspoon"
       "firefox"
       "visual-studio-code"
       "kitty"
@@ -70,7 +69,6 @@
       "transmission"
       "jordanbaird-ice"
       "orbstack"
-      "halloy"
       "figma"
     ];
     masApps = {
