@@ -69,7 +69,6 @@
       "transmission"
       "jordanbaird-ice"
       "orbstack"
-      "figma"
     ];
     masApps = {
       "Amphetamine" = 937984704;
