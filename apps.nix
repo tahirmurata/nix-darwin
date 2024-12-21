@@ -47,7 +47,7 @@
     age
   ];
 
-  environment.variables.EDITOR = "nvim";
+  environment.variables.EDITOR = "hx";
 
   homebrew = {
     enable = true;
