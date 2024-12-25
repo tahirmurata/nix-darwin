@@ -40,9 +40,6 @@
     # TUI Apps
     circumflex
 
-    # File manager
-    yazi
-
     # Encryption
     age
   ];
