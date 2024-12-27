@@ -67,6 +67,7 @@
       "jordanbaird-ice"
       "orbstack"
       "whisky"
+      "ghostty"
     ];
     masApps = {
       "Amphetamine" = 937984704;
