@@ -49,7 +49,7 @@
   homebrew = {
     enable = true;
     onActivation = {
-      autoUpdate = true;
+    #  autoUpdate = true;
       cleanup = "zap";
     };
     # updates homebrew packages on activation,
