@@ -44,12 +44,22 @@
     age
   ];
 
-  environment.variables.EDITOR = "hx";
+  environment.variables = {
+    EDITOR = "hx";
+    
+    HOMEBREW_NO_ANALYTICS = "1";
+    HOMEBREW_NO_INSECURE_REDIRECT = "1";
+    HOMEBREW_NO_EMOJI = "1";
+    HOMEBREW_NO_ENV_HINTS = "0";
+  };
 
   homebrew = {
     enable = true;
+    caskArgs.require_sha = true;
+
     onActivation = {
-    #  autoUpdate = true;
+      autoUpdate = true;
+      upgrade = true;
       cleanup = "zap";
     };
     # updates homebrew packages on activation,
