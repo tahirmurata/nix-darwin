@@ -65,18 +65,18 @@
     # updates homebrew packages on activation,
     # can make darwin-rebuild much slower (otherwise i'd forget to do it ever though)
     casks = [
-      "firefox"
-      "visual-studio-code"
-      "kitty"
-      "discord"
-      "iina"
-      "alt-tab"
-      "tailscale"
-      "altserver"
-      "transmission"
-      "jordanbaird-ice"
-      "orbstack"
-      "whisky"
+      "firefox" # Popular open-source web browser
+      "kitty" # Fast GPU-accelerated terminal emulator
+      "visual-studio-code" # Popular code editor with extensive plugin support
+      "orbstack" # Modern Docker and Linux container manager
+      "discord" # Gaming and community chat platform
+      "tailscale" # Zero-config VPN for secure networking
+      "iina" # Modern media player for macOS
+      "transmission" # Lightweight BitTorrent client
+      "alt-tab" # Windows-style alt-tab window switcher
+      "jordanbaird-ice" # Window management and workspace organization
+      "altserver" # iOS sideloading utility
+      "whisky" # Wine wrapper for running Windows apps on Mac
     ];
     masApps = {
       "Amphetamine" = 937984704;
