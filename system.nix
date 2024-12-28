@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 ###################################################################################
 #
@@ -99,6 +99,9 @@
         EnableStandardClickToShowDesktop = false; # Disable click on the wallpaper to show desktop
         StandardHideDesktopIcons = true; # Hide desktop icons
       };
+
+      # remember to set the hostname in the kernel command line
+      smb.NetBIOSName = config.networking.hostName;
     };
   };
   # Add ability to use TouchID for sudo authentication
