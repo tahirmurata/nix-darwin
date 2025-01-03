@@ -67,7 +67,7 @@
     # can make darwin-rebuild much slower (otherwise i'd forget to do it ever though)
     casks = [
       "firefox" # Popular open-source web browser
-      "google-chrome"
+      "google-chrome" # For Chromecast
       "kitty" # Fast GPU-accelerated terminal emulator
       "visual-studio-code" # Popular code editor with extensive plugin support
       "orbstack" # Modern Docker and Linux container manager
