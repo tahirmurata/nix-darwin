@@ -10,7 +10,7 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, nix-homebrew }:
     {
       darwinConfigurations."pastc-darwin" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
