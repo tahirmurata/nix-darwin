@@ -80,7 +80,6 @@
       "jordanbaird-ice" # Window management and workspace organization
       "altserver" # iOS sideloading utility
       "whisky" # Wine wrapper for running Windows apps on Mac
-      "playcover-community" # Sideload iOS apps and games
     ];
     masApps = {
       "Amphetamine" = 937984704;
