@@ -79,7 +79,6 @@
       "alt-tab" # Windows-style alt-tab window switcher
       "jordanbaird-ice" # Window management and workspace organization
       "altserver" # iOS sideloading utility
-      "whisky" # Wine wrapper for running Windows apps on Mac
     ];
     masApps = {
       "Amphetamine" = 937984704;
