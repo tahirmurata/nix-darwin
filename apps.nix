@@ -79,6 +79,7 @@
       "alt-tab" # Windows-style alt-tab window switcher
       "jordanbaird-ice" # Window management and workspace organization
       "altserver" # iOS sideloading utility
+      "ollama" # Get up and running with large language models locally
     ];
     masApps = {
       "Amphetamine" = 937984704;
