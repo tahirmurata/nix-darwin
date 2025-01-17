@@ -114,7 +114,6 @@
   fonts = {
     packages = with pkgs; [
       jetbrains-mono
-      departure-mono
     
       # nerdfonts
       # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/data/fonts/nerd-fonts/manifests/fonts.json
