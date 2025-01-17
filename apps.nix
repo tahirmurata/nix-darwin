@@ -30,9 +30,7 @@
     # General
     btop
     fastfetch
-    bat
     ripgrep
-    libwebp
 
     # Git
     gh
