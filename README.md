@@ -6,7 +6,7 @@
 <p align="center">Nix for MacBook Air</p>
 
 ## Features
-- Leverages [Nix](https://nixos.org) to implement the Nix package manager for reproducible builds.
+- Leverages [Lix](https://lix.systems) to implement the Nix package manager for reproducible builds.
 - Utilizes [nix-darwin](https://github.com/LnL7/nix-darwin) for macOS system configuration and Homebrew casks management.
 - Integrates [nix-homebrew](https://github.com/zhaofengli/nix-homebrew) for managing Homebrew installations through Nix.
 
