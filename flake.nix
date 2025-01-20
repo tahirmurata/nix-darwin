@@ -1,5 +1,5 @@
 {
-  description = "Nix for pastc";
+  description = "Nix for MacBook Air";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -12,7 +12,7 @@
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, nix-homebrew }:
     {
-      darwinConfigurations."pastc-darwin" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."AcacianoMacBook-Air" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs; };
         modules = [
@@ -50,6 +50,6 @@
         ];
       };
 
-      darwinPackages = self.darwinConfigurations."pastc-darwin".pkgs;
+      darwinPackages = self.darwinConfigurations."AcacianoMacBook-Air".pkgs;
     };
 }
