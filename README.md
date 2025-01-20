@@ -3,17 +3,15 @@
     <h2 align="center">Nix-Darwin</h2>
 </p>
 
-<p align="center">Configuration files for macOS using Nix</p>
+<p align="center">Nix for MacBook Air</p>
 
 ## Features
-- Uses [Nix](https://nixos.org/) as the package manager for reproducible builds
-- Leverages [nix-darwin](https://github.com/LnL7/nix-darwin) for macOS system configuration and Homebrew casks
-- Integrates [nix-homebrew](https://github.com/zhaofengli/nix-homebrew) to manage Homebrew installation via Nix
+- Leverages [Nix](https://nixos.org) to implement the Nix package manager for reproducible builds.
+- Utilizes [nix-darwin](https://github.com/LnL7/nix-darwin) for macOS system configuration and Homebrew casks management.
+- Integrates [nix-homebrew](https://github.com/zhaofengli/nix-homebrew) for managing Homebrew installations through Nix.
 
 ## Usage
-Go to the dotfiles repo: [dotfiles](
-    https://github.com/pastc/dotfiles
-)
+Go to the dotfiles repo: [dotfiles](https://github.com/tahirmurata/dotfiles)
 
 ## License
 This repository is licensed under the [Apache License 2.0](LICENSE)
