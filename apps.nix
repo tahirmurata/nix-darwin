@@ -11,7 +11,7 @@
     pure-prompt
 
     # Programming languages
-    nodejs_23
+    nodejs
     rustup
     nixd
     go
