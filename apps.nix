@@ -77,6 +77,7 @@
       "jordanbaird-ice" # Window management and workspace organization
       "altserver" # iOS sideloading utility
       "ollama" # Get up and running with large language models locally
+      "krita" # Free and open-source painting and sketching program
     ];
     masApps = {
       "Amphetamine" = 937984704;
