@@ -38,6 +38,7 @@
 
     # TUI Apps
     circumflex
+    yazi
 
     # Encryption
     age
