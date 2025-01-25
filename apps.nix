@@ -3,50 +3,56 @@
 {
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
-    # Development tools
-    helix
-    jujutsu
-
     # Prompt
     pure-prompt
 
-    # Programming languages
-    nodejs
-    rustup
+    # Programming
+    wgo
+
+    ## Nix
     nixd
+    nixfmt-rfc-style
+
+    ## Haskell
+
+    ## Node
+    nodejs
+    pnpm
+
+    ## Rust
+    rustup
+
+    ## Go
     go
     gopls
     gotools
-    templ
+
+    ## Typst
     typst
     tinymist
 
-    # Programming cli
-    pnpm
-    wgo
-
     # CLI tools
 
-    # General
+    ## General
+    helix
     btop
     fastfetch
-    ripgrep
 
-    # Git
+    ## Git
     gh
     lazygit
 
-    # TUI Apps
+    ## TUI Apps
     circumflex
     yazi
 
-    # Encryption
+    ## Encryption
     age
   ];
 
   environment.variables = {
     EDITOR = "hx";
-    
+
     HOMEBREW_NO_ANALYTICS = "1";
     HOMEBREW_NO_INSECURE_REDIRECT = "1";
     HOMEBREW_NO_EMOJI = "1";
