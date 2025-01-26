@@ -21,6 +21,9 @@
         modules = [
           lix-module.nixosModules.default
           {
+            # Set user as trusted
+            nix.settings.trusted-users = ["root" "acacia"];
+
             # Set Git commit hash for darwin-version.
             system.configurationRevision = self.rev or self.dirtyRev or null;
 
