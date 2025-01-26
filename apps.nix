@@ -7,7 +7,6 @@
     pure-prompt
 
     # Programming
-    wgo
 
     ## Nix
     nixd
@@ -32,6 +31,9 @@
     tinymist
 
     # CLI tools
+
+    ## Programming
+    wgo
 
     ## General
     helix
