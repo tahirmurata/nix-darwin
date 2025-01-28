@@ -81,8 +81,8 @@
     ];
 
     masApps = {
-      "Amphetamine" = 937984704;
-      "Klack" = 6446206067;
+      "Amphetamine" = 937984704; # Powerful keep-awake utility
+      "Klack" = 6446206067; # Satisfying sound with every keystroke.
     };
   };
 }
