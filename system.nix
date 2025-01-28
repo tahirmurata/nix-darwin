@@ -9,13 +9,6 @@
 #
 ###################################################################################
 {
-  # power = {
-  #   sleep = {
-  #     display = "never"; # Never turn off the display
-  #     computer = "never"; # Never put the computer to sleep
-  #   };
-  # };
-
   system = {
     stateVersion = 5;
     # activationScripts are executed every time you boot the system or run `nixos-rebuild` / `darwin-rebuild`.
@@ -88,11 +81,6 @@
         ShowCategory = 100; # Show all processes
         SortColumn = "CPUUsage"; # Sort by CPU usage
         SortDirection = 0; # Sort in descending order
-      };
-
-      screensaver = {
-        askForPassword = true; # Ask for password immediately after sleep or screen saver begins
-        askForPasswordDelay = 0; # Set the delay to 0
       };
 
       WindowManager = {
