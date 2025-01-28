@@ -13,7 +13,14 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nixpkgs, lix-module, nix-darwin, nix-homebrew }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      lix-module,
+      nix-darwin,
+      nix-homebrew,
+    }:
     {
       darwinConfigurations."AcacianoMacBook-Air" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -22,7 +29,10 @@
           lix-module.nixosModules.default
           {
             # Set user as trusted
-            nix.settings.trusted-users = ["root" "acacia"];
+            nix.settings.trusted-users = [
+              "root"
+              "acacia"
+            ];
 
             # Set Git commit hash for darwin-version.
             system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -31,13 +41,18 @@
             services.nix-daemon.enable = true;
 
             # Necessary for using flakes on this system
-            nix.settings.experimental-features = [ "nix-command" "flakes" ];
+            nix.settings.experimental-features = [
+              "nix-command"
+              "flakes"
+            ];
 
             # Used for backwards compatibility
             system.stateVersion = 5;
 
             # The platform the configuration will be used on
             nixpkgs.hostPlatform = "aarch64-darwin";
+
+            nixpkgs.config.allowUnfree = true;
           }
           nix-homebrew.darwinModules.nix-homebrew
           {
