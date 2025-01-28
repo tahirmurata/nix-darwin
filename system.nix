@@ -66,7 +66,7 @@
         persistent-apps = [
           "/System/Applications/System Settings.app"
           "/Applications/Firefox.app"
-          "/Applications/kitty.app"
+          "/Applications/Ghostty.app"
           "/System/Applications/Music.app"
         ];
         persistent-others = null;
