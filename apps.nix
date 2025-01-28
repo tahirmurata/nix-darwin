@@ -1,93 +1,86 @@
 { pkgs, ... }:
 
 {
-  # List packages installed in system profile
-  environment.systemPackages = with pkgs; [
-    # Prompt
-    pure-prompt
+  # Environment Configuration
+  environment = {
+    systemPackages = with pkgs; [
+      # Development Tools
+      ## Text Editors & IDEs
+      helix # Modern modal text editor
 
-    # Programming
+      ## Version Control
+      gh # GitHub command line interface
+      lazygit # Terminal UI for git
 
-    ## Nix
-    nixd
-    nixfmt-rfc-style
+      ## Programming Languages
+      go # Go programming language
+      gopls # Go language server
+      gotools # Go development utilities
+      nodejs_23 # JavaScript runtime environment
+      pnpm # Fast and efficient JavaScript package manager
 
-    ## Haskell
+      ## Nix Tools
+      nixd # Nix language server
+      nixfmt-rfc-style # Nix code formatter
+      devenv # Declarative development environments
 
-    ## Node
-    nodejs
-    pnpm
+      ## Document Processing
+      typst # Modern markup-based typesetting system
+      tinymist # Language service for Typst
 
-    ## Rust
-    rustup
+      # System Utilities
+      ## Monitoring & System Tools
+      btop # System resource monitor
+      fastfetch # System information display tool
+      wgo # Go live reload utility
+      age # Modern file encryption tool
 
-    ## Go
-    go
-    gopls
-    gotools
+      ## File Management
+      yazi # Fast terminal file manager
 
-    ## Typst
-    typst
-    tinymist
+      # Applications
+      vscode # Microsoft's open source code editor
+      iina # Modern media player for macOS
+      tailscale # Mesh VPN built on WireGuard
+      alt-tab-macos # Windows alt-tab on macOS
+      ollama # Local large language models
+      transmission_4 # BitTorrent client
 
-    # CLI tools
+      # Shell
+      pure-prompt # Minimal and fast ZSH prompt
+    ];
 
-    ## Programming
-    wgo
+    variables = {
+      EDITOR = "hx";
 
-    ## General
-    helix
-    btop
-    fastfetch
-
-    ## Git
-    gh
-    lazygit
-
-    ## TUI Apps
-    circumflex
-    yazi
-
-    ## Encryption
-    age
-  ];
-
-  environment.variables = {
-    EDITOR = "hx";
-
-    HOMEBREW_NO_ANALYTICS = "1";
-    HOMEBREW_NO_INSECURE_REDIRECT = "1";
-    HOMEBREW_NO_EMOJI = "1";
-    HOMEBREW_NO_ENV_HINTS = "0";
+      # Homebrew Configuration
+      HOMEBREW_NO_ANALYTICS = "1";
+      HOMEBREW_NO_INSECURE_REDIRECT = "1";
+      HOMEBREW_NO_EMOJI = "1";
+      HOMEBREW_NO_ENV_HINTS = "0";
+    };
   };
 
+  # Homebrew Configuration
   homebrew = {
     enable = true;
-    # caskArgs.require_sha = true;
 
     onActivation = {
       autoUpdate = true;
       upgrade = true;
       cleanup = "zap";
     };
-    # updates homebrew packages on activation,
-    # can make darwin-rebuild much slower (otherwise i'd forget to do it ever though)
+
+    # Application Installations
     casks = [
-      "firefox" # Popular open-source web browser
-      "google-chrome" # For Chromecast
-      "kitty" # Fast GPU-accelerated terminal emulator
-      "visual-studio-code" # Popular code editor with extensive plugin support
-      "orbstack" # Modern Docker and Linux container manager
-      "discord" # Gaming and community chat platform
-      "tailscale" # Zero-config VPN for secure networking
-      "iina" # Modern media player for macOS
-      "transmission" # Lightweight BitTorrent client
-      "alt-tab" # Windows-style alt-tab window switcher
-      "jordanbaird-ice" # Window management and workspace organization
+      "firefox" # Open-source web browser
+      "google-chrome" # Web browser with Chromecast support
+      "ghostty@tip" # GPU-accelerated terminal emulator
+      "orbstack" # Docker and Linux container manager
       "altserver" # iOS sideloading utility
-      "ollama" # Get up and running with large language models locally
-      "krita" # Free and open-source painting and sketching program
+      "krita" # Open-source digital art program
     ];
+
     masApps = {
       "Amphetamine" = 937984704;
       "Klack" = 6446206067;
