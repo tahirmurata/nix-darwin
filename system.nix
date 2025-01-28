@@ -67,7 +67,7 @@
           "/System/Applications/System Settings.app"
           "/Applications/Firefox.app"
           "/Applications/kitty.app"
-          "/System/Applications/Music.app"  
+          "/System/Applications/Music.app"
         ];
         persistent-others = null;
       };
@@ -102,7 +102,7 @@
   fonts = {
     packages = with pkgs; [
       jetbrains-mono
-    
+
       # nerdfonts
       # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/data/fonts/nerd-fonts/manifests/fonts.json
       pkgs.nerd-fonts.symbols-only
