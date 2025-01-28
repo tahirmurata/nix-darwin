@@ -32,7 +32,7 @@
         AppleInterfaceStyle = "Dark"; # Set dark mode
         ApplePressAndHoldEnabled = false; # Disable accented characters
         InitialKeyRepeat = 15; # Set initial key repeat delay
-        KeyRepeat = 3; # Set key repeat rate 
+        KeyRepeat = 2; # Set key repeat rate
         AppleShowScrollBars = "Always"; # Always show scrollbars
       };
 
