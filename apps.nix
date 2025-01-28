@@ -43,7 +43,6 @@
       iina # Modern media player for macOS
       tailscale # Mesh VPN built on WireGuard
       alt-tab-macos # Windows alt-tab on macOS
-      ollama # Local large language models
       transmission_4 # BitTorrent client
 
       # Shell
