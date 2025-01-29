@@ -86,6 +86,10 @@
       WindowManager = {
         EnableStandardClickToShowDesktop = false; # Disable click on the wallpaper to show desktop
         StandardHideDesktopIcons = true; # Hide desktop icons
+        EnableTiledWindowMargins = false; # Disable window margins when tiling windows
+        EnableTilingByEdgeDrag = false; # Disable draggin windows to screen edges to tile them
+        EnableTilingOptionAccelerator = false; # Disable holding alt to tile windows
+        EnableTopTilingByEdgeDrag = false; # Disable dragging windows to the menu bar to fill the screen
       };
 
       # remember to set the hostname in the kernel command line

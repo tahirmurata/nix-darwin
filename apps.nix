@@ -44,6 +44,7 @@
       tailscale # Mesh VPN built on WireGuard
       alt-tab-macos # Windows alt-tab on macOS
       transmission_4 # BitTorrent client
+      aerospace # i3-like tiling window manager for macOS
 
       # Shell
       pure-prompt # Minimal and fast ZSH prompt
