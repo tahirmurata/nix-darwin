@@ -28,23 +28,38 @@
         modules = [
           lix-module.nixosModules.default
           {
-            # Set user as trusted
-            nix.settings.trusted-users = [
-              "root"
-              "acacia"
-            ];
+            nix = {
+              settings = {
+                # Set user as trusted
+                trusted-users = [
+                  "root"
+                  "acacia"
+                ];
+                # Necessary for using flakes on this system
+                experimental-features = [
+                  "nix-command"
+                  "flakes"
+                ];
+              };
+              # Automatically run garbage collection
+              gc = {
+                automatic = true;
+                interval = [
+                  {
+                    Hour = 12;
+                    Minute = 0;
+                    Weekday = 6;
+                  }
+                ];
+                options = "--delete-older-than 7d";
+              };
+            };
 
             # Set Git commit hash for darwin-version.
             system.configurationRevision = self.rev or self.dirtyRev or null;
 
             # Auto upgrade nix package and the daemon service
             services.nix-daemon.enable = true;
-
-            # Necessary for using flakes on this system
-            nix.settings.experimental-features = [
-              "nix-command"
-              "flakes"
-            ];
 
             # Used for backwards compatibility
             system.stateVersion = 5;
