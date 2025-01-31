@@ -38,13 +38,6 @@
       ## File Management
       yazi # Fast terminal file manager
 
-      # Applications
-      vscode # Microsoft's open source code editor
-      iina # Modern media player for macOS
-      tailscale # Mesh VPN built on WireGuard
-      alt-tab-macos # Windows alt-tab on macOS
-      transmission_4 # BitTorrent client
-
       # Shell
       pure-prompt # Minimal and fast ZSH prompt
     ];
@@ -72,9 +65,14 @@
 
     # Application Installations
     casks = [
+      "visual-studio-code" # Open-source code editor
+      "iina" # Free and open-source media player
+      "tailscale" # Mesh VPN based on WireGuard
+      "alt-tab" # Enable Windows-like alt-tab
+      "transmission" # Open-source BitTorrent client
+      "ghostty" # Terminal emulator that uses platform-native UI and GPU acceleration
       "firefox" # Open-source web browser
       "google-chrome" # Web browser with Chromecast support
-      "ghostty@tip" # GPU-accelerated terminal emulator
       "orbstack" # Docker and Linux container manager
       "altserver" # iOS sideloading utility
       "krita" # Open-source digital art program
