@@ -83,6 +83,11 @@
         SortDirection = 0; # Sort in descending order
       };
 
+      screensaver = {
+        askForPassword = true; # Ask for password immediately after sleep or screen saver begins
+        askForPasswordDelay = 0; # Set the delay to 0
+      };
+
       WindowManager = {
         EnableStandardClickToShowDesktop = false; # Disable click on the wallpaper to show desktop
         StandardHideDesktopIcons = true; # Hide desktop icons
