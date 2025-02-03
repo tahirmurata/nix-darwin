@@ -76,6 +76,7 @@
       "orbstack" # Docker and Linux container manager
       "altserver" # iOS sideloading utility
       "krita" # Open-source digital art program
+      "figma" # Collaborative team software
     ];
 
     masApps = {
