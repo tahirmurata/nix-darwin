@@ -11,6 +11,7 @@
       ## Version Control
       gh # GitHub command line interface
       lazygit # Terminal UI for git
+      jujutsu # A Git-compatible VCS that is both simple and powerful
 
       ## Programming Languages
       go # Go programming language
