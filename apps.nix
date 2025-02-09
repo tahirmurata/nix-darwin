@@ -78,6 +78,7 @@
       "altserver" # iOS sideloading utility
       "krita" # Open-source digital art program
       "figma" # Collaborative team software
+      "livebook" # Code notebooks for Elixir developers
     ];
 
     masApps = {
