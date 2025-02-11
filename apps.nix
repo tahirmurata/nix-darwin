@@ -35,6 +35,7 @@
       fastfetch # System information display tool
       wgo # Go live reload utility
       age # Modern file encryption tool
+      ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
 
       ## File Management
       yazi # Fast terminal file manager
