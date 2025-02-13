@@ -16,28 +16,28 @@
     ```sh
     softwareupdate --install-rosetta --agree-to-license
     ```
-2. Install Lix
+3. Install Lix
 
     ```sh
     curl -sSf -L https://install.lix.systems/lix | sh -s -- install
     ```
-3. Clone the repository into `~/.dotfiles`:
+4. Clone the repository into `~/.dotfiles`:
 
     ```sh
     git clone https://github.com/tahirmurata/nix-darwin.git ~/nix
     ```
-4. Run the `link.sh` script:
+5. Run the `link.sh` script:
 
     ```sh
     ~/nix/link.sh
     ```
-5. Install `nix-darwin`:
+6. Install `nix-darwin`:
 
     Since darwin-rebuild isn't installed yet, the command uses nix to run darwin-rebuild directly from the nixpkgs repository.
     ```sh
     nix run nix-darwin -- switch --flake ~/nix
     ```
-6. Setup git with gh:
+7. Setup git with gh:
 
     ```sh
     gh auth login && gh auth setup-git
