@@ -35,7 +35,7 @@
 
     Since darwin-rebuild isn't installed yet, the command uses nix to run darwin-rebuild directly from the nixpkgs repository.
     ```sh
-    nix run nix-darwin -- switch --flake ~/nix
+    nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/nix
     ```
 7. Setup git with gh:
 
