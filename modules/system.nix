@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ self, ... }:
 
 ###################################################################################
 #
@@ -9,8 +9,15 @@
 #
 ###################################################################################
 {
+  time.timeZone = "Asia/Tokyo";
+
   system = {
+    # Nix state version
     stateVersion = 5;
+
+    # Set Git commit hash for darwin-version
+    configurationRevision = self.rev or self.dirtyRev or null;
+
     # activationScripts are executed every time you boot the system or run `nixos-rebuild` / `darwin-rebuild`.
     activationScripts.postUserActivation.text = ''
       # activateSettings -u will reload the settings from the database and apply them to the current session,
@@ -96,25 +103,13 @@
         EnableTilingOptionAccelerator = false; # Disable holding alt to tile windows
         EnableTopTilingByEdgeDrag = true; # Disable dragging windows to the menu bar to fill the screen
       };
-
-      # remember to set the hostname in the kernel command line
-      smb.NetBIOSName = config.networking.hostName;
     };
   };
+
   # Add ability to use TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
   programs.zsh.enable = true;
-
-  fonts = {
-    packages = with pkgs; [
-      jetbrains-mono
-
-      # nerdfonts
-      # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/data/fonts/nerd-fonts/manifests/fonts.json
-      pkgs.nerd-fonts.symbols-only
-    ];
-  };
 }

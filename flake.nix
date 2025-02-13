@@ -16,74 +16,31 @@
   outputs =
     inputs@{
       self,
-      nixpkgs,
       lix-module,
       nix-darwin,
       nix-homebrew,
+      ...
     }:
+    let
+      me = {
+        username = "acacia";
+        hostname = "AcacianoMacBook-Air";
+      };
+    in
     {
-      darwinConfigurations."AcacianoMacBook-Air" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."${me.hostname}" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs me; };
         modules = [
           lix-module.nixosModules.default
-          {
-            nix = {
-              settings = {
-                # Set user as trusted
-                trusted-users = [
-                  "root"
-                  "acacia"
-                ];
-                # Necessary for using flakes on this system
-                experimental-features = [
-                  "nix-command"
-                  "flakes"
-                ];
-              };
-              # Automatically run garbage collection
-              gc = {
-                automatic = true;
-                interval = [
-                  {
-                    Hour = 12;
-                    Minute = 0;
-                    Weekday = 6;
-                  }
-                ];
-                options = "--delete-older-than 7d";
-              };
-            };
-
-            # Set Git commit hash for darwin-version.
-            system.configurationRevision = self.rev or self.dirtyRev or null;
-
-            # Used for backwards compatibility
-            system.stateVersion = 5;
-
-            # The platform the configuration will be used on
-            nixpkgs.hostPlatform = "aarch64-darwin";
-
-            nixpkgs.config.allowUnfree = true;
-          }
           nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              # Install Homebrew under the default prefix
-              enable = true;
-
-              # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-              enableRosetta = true;
-
-              # User owning the Homebrew prefix
-              user = "acacia";
-            };
-          }
-          ./system.nix
-          ./apps.nix
+          ./modules/settings.nix
+          ./modules/system.nix
+          ./modules/pkgs.nix
+          ./modules/brew.nix
         ];
       };
 
-      darwinPackages = self.darwinConfigurations."AcacianoMacBook-Air".pkgs;
+      darwinPackages = self.darwinConfigurations."${me.hostname}".pkgs;
     };
 }
