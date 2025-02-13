@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_DIR="$HOME/nixconfig/config"
+CONFIG_DIR="$HOME/nix/config"
 
 # Make sure ~/.config exists
 mkdir -p "$HOME/.config"
