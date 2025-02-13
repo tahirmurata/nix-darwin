@@ -45,7 +45,7 @@
     yazi # Fast terminal file manager
 
     # Shell
-    pure-prompt # Minimal and fast ZSH prompt
+    fish # Smart and user-friendly command line shell
   ];
 
   fonts = {

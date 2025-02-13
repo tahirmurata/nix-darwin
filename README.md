@@ -5,13 +5,43 @@
 
 <p align="center">Nix for MacBook Air</p>
 
-## Features
-- Leverages [Lix](https://lix.systems) to implement the Nix package manager for reproducible builds.
-- Utilizes [nix-darwin](https://github.com/LnL7/nix-darwin) for macOS system configuration and Homebrew casks management.
-- Integrates [nix-homebrew](https://github.com/zhaofengli/nix-homebrew) for managing Homebrew installations through Nix.
-
 ## Usage
-Go to the dotfiles repo: [dotfiles](https://github.com/tahirmurata/dotfiles)
+1. Install Command Line Tools
+
+    ```sh
+    xcode-select --install
+    ```
+2. Install Rosetta 2
+
+    ```sh
+    softwareupdate --install-rosetta --agree-to-license
+    ```
+2. Install Lix
+
+    ```sh
+    curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+    ```
+3. Clone the repository into `~/.dotfiles`:
+
+    ```sh
+    git clone https://github.com/tahirmurata/nix-darwin.git ~/nix
+    ```
+4. Run the `link.sh` script:
+
+    ```sh
+    ~/nix/link.sh
+    ```
+5. Install `nix-darwin`:
+
+    Since darwin-rebuild isn't installed yet, the command uses nix to run darwin-rebuild directly from the nixpkgs repository.
+    ```sh
+    nix run nix-darwin -- switch --flake ~/nix
+    ```
+6. Setup git with gh:
+
+    ```sh
+    gh auth login && gh auth setup-git
+    ```
 
 ## License
 This repository is licensed under the [Apache License 2.0](LICENSE)

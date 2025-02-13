@@ -1,4 +1,4 @@
-{ self, ... }:
+{ inputs, ... }:
 
 ###################################################################################
 #
@@ -16,7 +16,7 @@
     stateVersion = 5;
 
     # Set Git commit hash for darwin-version
-    configurationRevision = self.rev or self.dirtyRev or null;
+    configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 
     # activationScripts are executed every time you boot the system or run `nixos-rebuild` / `darwin-rebuild`.
     activationScripts.postUserActivation.text = ''
@@ -106,10 +106,16 @@
     };
   };
 
+  # Set default editor to helix
+  environment.variables = { EDITOR = "hx"; VISUAL = "hx"; };
+
   # Add ability to use TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
   programs.zsh.enable = true;
+
+  # Enable fish shell
+  programs.fish.enable = true;
 }

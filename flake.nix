@@ -23,8 +23,8 @@
     }:
     let
       me = {
-        username = "acacia";
-        hostname = "AcacianoMacBook-Air";
+        username = "acasea";
+        hostname = "AcaseanoMacBook-Air";
       };
     in
     {
