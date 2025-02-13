@@ -72,7 +72,7 @@
 
         persistent-apps = [
           "/System/Applications/System Settings.app"
-          "/Applications/Firefox.app"
+          "/Applications/Google Chrome.app"
           "/Applications/Ghostty.app"
           "/System/Applications/Music.app"
         ];
