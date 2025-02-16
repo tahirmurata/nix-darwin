@@ -38,7 +38,6 @@
       "alt-tab" # Enable Windows-like alt-tab
       "transmission" # Open-source BitTorrent client
       "ghostty" # Terminal emulator that uses platform-native UI and GPU acceleration
-      "firefox" # Open-source web browser
       "google-chrome" # Web browser with Chromecast support
       "orbstack" # Docker and Linux container manager
       "altserver" # iOS sideloading utility
