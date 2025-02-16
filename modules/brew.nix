@@ -44,7 +44,6 @@
       "krita" # Open-source digital art program
       "figma" # Collaborative team software
       "livebook" # Code notebooks for Elixir developers
-      "zen-browser" # Web browser that is beautifully designed, privacy-focused, and packed with features.
       "jetbrains-toolbox" # JetBrains tools manager
       "keka" # The macOS file archiver
     ];
