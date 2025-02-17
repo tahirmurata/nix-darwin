@@ -1,51 +1,56 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   # The platform the configuration will be used on
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
 
   # Environment Configuration
-  environment.systemPackages = with pkgs; [
-    # Development Tools
-    ## Text Editors & IDEs
-    helix # Modern modal text editor
+  environment.systemPackages =
+    with pkgs;
+    [
+      # Development Tools
+      ## Text Editors & IDEs
+      helix # Modern modal text editor
 
-    ## Version Control
-    gh # GitHub command line interface
-    lazygit # Terminal UI for git
-    jujutsu # A Git-compatible VCS that is both simple and powerful
+      ## Version Control
+      gh # GitHub command line interface
+      lazygit # Terminal UI for git
+      jujutsu # A Git-compatible VCS that is both simple and powerful
 
-    ## Programming Languages
-    go # Go programming language
-    gopls # Go language server
-    gotools # Go development utilities
-    nodejs_23 # JavaScript runtime environment
-    pnpm # Fast and efficient JavaScript package manager
-    cargo # Downloads your Rust project's dependencies and builds your project
-    rustc # Safe, concurrent, practical language (wrapper script)
+      ## Programming Languages
+      go # Go programming language
+      gopls # Go language server
+      gotools # Go development utilities
+      nodejs_23 # JavaScript runtime environment
+      pnpm # Fast and efficient JavaScript package manager
+      cargo # Downloads your Rust project's dependencies and builds your project
+      rustc # Safe, concurrent, practical language (wrapper script)
 
-    ## Nix Tools
-    nixd # Nix language server
-    nixfmt-rfc-style # Nix code formatter
+      ## Nix Tools
+      nixd # Nix language server
+      nixfmt-rfc-style # Nix code formatter
 
-    ## Document Processing
-    typst # Modern markup-based typesetting system
-    tinymist # Language service for Typst
+      ## Document Processing
+      typst # Modern markup-based typesetting system
+      tinymist # Language service for Typst
 
-    # System Utilities
-    ## Monitoring & System Tools
-    btop # System resource monitor
-    fastfetch # System information display tool
-    wgo # Go live reload utility
-    age # Modern file encryption tool
-    ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
+      # System Utilities
+      ## Monitoring & System Tools
+      btop # System resource monitor
+      fastfetch # System information display tool
+      wgo # Go live reload utility
+      age # Modern file encryption tool
+      ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
 
-    ## File Management
-    yazi # Fast terminal file manager
+      ## File Management
+      yazi # Fast terminal file manager
 
-    # Shell
-    fish # Smart and user-friendly command line shell
-  ];
+      # Shell
+      fish # Smart and user-friendly command line shell
+    ]
+    ++ [
+      inputs.flox.packages.${pkgs.system}.default
+    ];
 
   fonts = {
     packages = with pkgs; [

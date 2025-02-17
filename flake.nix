@@ -1,6 +1,11 @@
 {
   description = "Nix for MacBook Air";
 
+  nixConfig = {
+    extra-trusted-substituters = [ "https://cache.flox.dev" ];
+    extra-trusted-public-keys = [ "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs=" ];
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
@@ -11,6 +16,10 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
+    flox = {
+      url = "github:flox/flox/v1.3.12";
+    };
   };
 
   outputs =
