@@ -27,7 +27,6 @@
     ## Nix Tools
     nixd # Nix language server
     nixfmt-rfc-style # Nix code formatter
-    devenv # Declarative development environments
 
     ## Document Processing
     typst # Modern markup-based typesetting system
