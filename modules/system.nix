@@ -112,6 +112,8 @@
     EDITOR = "hx";
     VISUAL = "hx";
 
+    # Set do not track
+    DO_NOT_TRACK = "1";
   };
 
   # Add ability to use TouchID for sudo authentication
