@@ -46,6 +46,7 @@
       "livebook" # Code notebooks for Elixir developers
       "jetbrains-toolbox" # JetBrains tools manager
       "keka" # The macOS file archiver
+      "thorium" # Epub reader
     ];
 
     masApps = {
