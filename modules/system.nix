@@ -107,7 +107,12 @@
   };
 
   # Set default editor to helix
-  environment.variables = { EDITOR = "hx"; VISUAL = "hx"; };
+  environment.variables = {
+    # Set default modal editor to Helix
+    EDITOR = "hx";
+    VISUAL = "hx";
+
+  };
 
   # Add ability to use TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
