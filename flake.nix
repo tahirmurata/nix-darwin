@@ -17,9 +17,7 @@
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
-    flox = {
-      url = "github:flox/flox/v1.3.12";
-    };
+    flox.url = "github:flox/flox/v1.3.12";
   };
 
   outputs =
