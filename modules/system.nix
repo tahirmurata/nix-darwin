@@ -71,12 +71,11 @@
         wvous-bl-corner = 1; # bottom left corner
 
         persistent-apps = [
-          "/System/Applications/System Settings.app"
-          "/Applications/Google Chrome.app"
-          "/Applications/Ghostty.app"
-          "/System/Applications/Music.app"
+          { app = "/System/Applications/System Settings.app"; }
+          { app = "/Applications/Google Chrome.app"; }
+          { app = "/Applications/Ghostty.app"; }
+          { app = "/System/Applications/Music.app"; }
         ];
-        persistent-others = null;
       };
 
       trackpad = {
