@@ -1,8 +1,10 @@
 { inputs, pkgs, ... }:
 {
   # The platform the configuration will be used on
-  nixpkgs.hostPlatform = "aarch64-darwin";
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    hostPlatform = "aarch64-darwin";
+    config.allowUnfree = true;
+  };
 
   # Environment Configuration
   environment.systemPackages =

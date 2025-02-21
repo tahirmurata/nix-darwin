@@ -34,6 +34,7 @@
         InitialKeyRepeat = 15; # Set initial key repeat delay
         KeyRepeat = 2; # Set key repeat rate
         AppleShowScrollBars = "Always"; # Always show scrollbars
+
         # Several spelling related settings
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticInlinePredictionEnabled = false;
@@ -41,6 +42,7 @@
         NSAutomaticPeriodSubstitutionEnabled = false;
         NSAutomaticQuoteSubstitutionEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
+
         # Use expanded save panel by default
         NSNavPanelExpandedStateForSaveMode = true;
         NSNavPanelExpandedStateForSaveMode2 = true;
