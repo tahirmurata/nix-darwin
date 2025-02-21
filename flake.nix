@@ -22,7 +22,6 @@
 
   outputs =
     inputs@{
-      self,
       lix-module,
       nix-darwin,
       nix-homebrew,
@@ -47,7 +46,5 @@
           ./modules/brew.nix
         ];
       };
-
-      darwinPackages = self.darwinConfigurations."${me.hostname}".pkgs;
     };
 }
