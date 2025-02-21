@@ -1,11 +1,10 @@
-{ me, ... }:
+{ ... }:
 {
   nix = {
     settings = {
       # Set user as trusted
       trusted-users = [
-        "root"
-        me.username
+        "@admin"
       ];
       # Necessary for using flakes on this system
       experimental-features = [
