@@ -35,6 +35,7 @@
       ## Document Processing
       typst # Modern markup-based typesetting system
       tinymist # Language service for Typst
+      typstyle # Beautiful and reliable typst code formatter
 
       # System Utilities
       ## Monitoring & System Tools
