@@ -51,9 +51,6 @@
       # Shell
       fish # Smart and user-friendly command line shell
     ]
-    ++ [
-      inputs.flox.packages.${pkgs.system}.default
-    ];
 
   fonts = {
     packages = with pkgs; [
