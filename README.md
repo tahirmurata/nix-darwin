@@ -44,4 +44,4 @@
     ```
 
 ## License
-This repository is licensed under the [Apache License 2.0](LICENSE)
+This repository is released into the public domain under the [Unlicense license](UNLICENSE)
