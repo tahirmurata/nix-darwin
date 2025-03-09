@@ -1,6 +1,8 @@
 { ... }:
 {
   nix = {
+    enable = true;
+
     settings = {
       # Set user as trusted
       trusted-users = [
@@ -12,6 +14,7 @@
         "flakes"
       ];
     };
+
     # Automatically run garbage collection
     gc = {
       automatic = true;

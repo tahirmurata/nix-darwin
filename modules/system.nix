@@ -13,7 +13,7 @@
 
   system = {
     # Nix state version
-    stateVersion = 5;
+    stateVersion = 6;
 
     # Set Git commit hash for darwin-version
     configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
