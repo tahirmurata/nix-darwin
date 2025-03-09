@@ -84,7 +84,7 @@
 
         persistent-apps = [
           { app = "/System/Applications/System Settings.app"; }
-          { app = "/Applications/Google Chrome.app"; }
+          { app = "/Applications/Safari.app"; }
           { app = "/Applications/Ghostty.app"; }
           { app = "/System/Applications/Music.app"; }
         ];
