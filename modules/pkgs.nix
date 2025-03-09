@@ -50,7 +50,7 @@
 
       # Shell
       fish # Smart and user-friendly command line shell
-    ]
+    ];
 
   fonts = {
     packages = with pkgs; [
