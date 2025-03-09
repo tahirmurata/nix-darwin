@@ -20,7 +20,7 @@
       jujutsu # A Git-compatible VCS that is both simple and powerful
 
       ## Programming Languages
-      go # Go programming language
+      go_1_24 # Go programming language
       gopls # Go language server
       gotools # Go development utilities
       nodejs_23 # JavaScript runtime environment
