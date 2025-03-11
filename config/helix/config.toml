@@ -6,11 +6,15 @@ cursorline = true
 color-modes = true
 mouse = false
 completion-replace = true
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 normal = "block"
 insert = "bar"
 select = "underline"
+
+[editor.file-picker]
+hidden = false
 
 [editor.indent-guides]
 render = true
@@ -24,7 +28,7 @@ display-inlay-hints = true
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
-other-lines = "warning"
+# other-lines = "warning"
 
 [keys.normal]
 "ret" = "goto_word"

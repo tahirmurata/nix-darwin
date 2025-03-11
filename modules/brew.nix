@@ -38,15 +38,13 @@
       "alt-tab" # Enable Windows-like alt-tab
       "transmission" # Open-source BitTorrent client
       "ghostty" # Terminal emulator that uses platform-native UI and GPU acceleration
-      "google-chrome" # Web browser with Chromecast support
       "orbstack" # Docker and Linux container manager
       "altserver" # iOS sideloading utility
-      "krita" # Open-source digital art program
-      "figma" # Collaborative team software
       "livebook" # Code notebooks for Elixir developers
       "jetbrains-toolbox" # JetBrains tools manager
       "keka" # The macOS file archiver
-      "thorium" # Epub reader
+      "prismlauncher" # Open source Minecraft launcher
+      "zed" # Multiplayer code editor
     ];
 
     masApps = {
