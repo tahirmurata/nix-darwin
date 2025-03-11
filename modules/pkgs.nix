@@ -25,6 +25,7 @@
       gotools # Go development utilities
       nodejs_23 # JavaScript runtime environment
       pnpm # Fast and efficient JavaScript package manager
+      bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
       cargo # Downloads your Rust project's dependencies and builds your project
       rustc # Safe, concurrent, practical language (wrapper script)
 
