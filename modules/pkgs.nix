@@ -12,7 +12,7 @@
     [
       # Development Tools
       ## Text Editors & IDEs
-      helix # Modern modal text editor
+      # helix # Modern modal text editor
 
       ## Version Control
       gh # GitHub command line interface
@@ -51,6 +51,9 @@
 
       # Shell
       fish # Smart and user-friendly command line shell
+    ]
+    ++ [
+      inputs.helix-master.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
   fonts = {
