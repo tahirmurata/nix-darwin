@@ -20,6 +20,7 @@
       jujutsu # A Git-compatible VCS that is both simple and powerful
 
       ## Programming Languages
+      lldb # Next-generation high-performance debugger
       go # Go programming language
       gopls # Go language server
       gotools # Go development utilities
