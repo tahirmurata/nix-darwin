@@ -4,7 +4,7 @@ theme = "catppuccin"
 line-number = "relative"
 cursorline = true
 color-modes = true
-mouse = false
+# mouse = false
 completion-replace = true
 end-of-line-diagnostics = "hint"
 
