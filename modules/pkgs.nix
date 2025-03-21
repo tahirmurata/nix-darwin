@@ -29,6 +29,8 @@
       bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
       cargo # Downloads your Rust project's dependencies and builds your project
       rustc # Safe, concurrent, practical language (wrapper script)
+      uv # Extremely fast Python package installer and resolver, written in Rust
+      ruff # Extremely fast Python linter and code formatter
 
       ## Nix Tools
       nixd # Nix language server
