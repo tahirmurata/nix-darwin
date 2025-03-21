@@ -43,8 +43,8 @@
       "livebook" # Code notebooks for Elixir developers
       "jetbrains-toolbox" # JetBrains tools manager
       "keka" # The macOS file archiver
-      "prismlauncher" # Open source Minecraft launcher
       "zed" # Multiplayer code editor
+      "google-chrome" # Web browser
     ];
 
     masApps = {
