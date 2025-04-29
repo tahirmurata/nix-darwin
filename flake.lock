@@ -17,6 +17,22 @@
         "type": "github"
       }
     },
+    "encore-dev": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745338448,
+        "narHash": "sha256-KpCsqT+JmNlABn/7iibe5RyzhJA1k8pfEpWUzaDCwno=",
+        "owner": "encoredev",
+        "repo": "homebrew-tap",
+        "rev": "b103ef275645ace61d4e7eaaf4cd0fda069c2a6f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "encoredev",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -44,11 +60,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1745780771,
-        "narHash": "sha256-rePWBU6otvAILRzza+ze+i66HBpIr9jVLowmZO+UIFI=",
+        "lastModified": 1745933300,
+        "narHash": "sha256-BJpxqZar6vrmv1MtZIjmBa7x+0HEP8kmYeFejz7m2uc=",
         "owner": "helix-editor",
         "repo": "helix",
-        "rev": "9f3b193743e6150a1d376d8ddcfb70625b8e2409",
+        "rev": "1c32fb2d4df3f06f96ca33db7d9f9b15297c7f8d",
         "type": "github"
       },
       "original": {
@@ -65,11 +81,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1744478979,
-        "narHash": "sha256-dyN+teG9G82G+m+PX/aSAagkC+vUv0SgUw3XkPhQodQ=",
+        "lastModified": 1745816321,
+        "narHash": "sha256-Gyh/fkCDqVNGM0BWvk+4UAS17w2UI6iwnbQQCmc1TDI=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "43975d782b418ebf4969e9ccba82466728c2851b",
+        "rev": "4515dacafb0ccd42e5395aacc49fd58a43027e01",
         "type": "github"
       },
       "original": {
@@ -147,11 +163,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1745377448,
-        "narHash": "sha256-jhZDfXVKdD7TSEGgzFJQvEEZ2K65UMiqW5YJ2aIqxMA=",
+        "lastModified": 1745900683,
+        "narHash": "sha256-ZGi2gjgPtmPmplCVz7dNufqkBr00g6EeAloX3GrFQls=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "507b63021ada5fee621b6ca371c4fca9ca46f52c",
+        "rev": "ffa0bb043c25cfc79ff3bc20ba2e44c3724499b1",
         "type": "github"
       },
       "original": {
@@ -163,6 +179,7 @@
     },
     "root": {
       "inputs": {
+        "encore-dev": "encore-dev",
         "helix-master": "helix-master",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
