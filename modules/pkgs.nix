@@ -20,11 +20,13 @@
       jujutsu # A Git-compatible VCS that is both simple and powerful
 
       ## Programming Languages
+      ffmpeg
+      hut # A CLI tool for sr.ht.
       lldb # Next-generation high-performance debugger
       go # Go programming language
       gopls # Go language server
       gotools # Go development utilities
-      nodejs_23 # JavaScript runtime environment
+      nodejs_24 # JavaScript runtime environment
       pnpm # Fast and efficient JavaScript package manager
       bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
       # cargo # Downloads your Rust project's dependencies and builds your project
