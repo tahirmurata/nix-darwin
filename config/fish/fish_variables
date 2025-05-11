@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export XDG_CONFIG_HOME:/Users/acacia/\x2econfig
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:6c7086
 SETUVAR fish_color_cancel:f38ba8
@@ -40,4 +41,4 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Users/acasea/\x2elocal/bin\x1e/Users/acasea/go/bin
+SETUVAR fish_user_paths:/Users/acacia/go/bin\x1e/Users/acasea/\x2elocal/bin\x1e/Users/acasea/go/bin
