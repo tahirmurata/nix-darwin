@@ -9,8 +9,8 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
-    helix-master.url = "github:helix-editor/helix/master";
-    helix-master.inputs.nixpkgs.follows = "nixpkgs";
+    # helix-master.url = "github:helix-editor/helix/master";
+    # helix-master.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

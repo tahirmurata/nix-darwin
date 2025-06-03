@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   # The platform the configuration will be used on
   nixpkgs = {
@@ -12,7 +12,7 @@
     [
       # Development Tools
       ## Text Editors & IDEs
-      # helix # Modern modal text editor
+      helix # Modern modal text editor
 
       ## Version Control
       gh # GitHub command line interface
@@ -29,10 +29,6 @@
       nodejs_24 # JavaScript runtime environment
       pnpm # Fast and efficient JavaScript package manager
       bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
-      # cargo # Downloads your Rust project's dependencies and builds your project
-      # rustc # Safe, concurrent, practical language (wrapper script)
-      # rustfmt # Tool for formatting Rust code according to style guidelines
-      # rust-analyzer # Modular compiler frontend for the Rust language
       uv # Extremely fast Python package installer and resolver, written in Rust
       ruff # Extremely fast Python linter and code formatter
 
@@ -52,16 +48,17 @@
       wgo # Go live reload utility
       age # Modern file encryption tool
       ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
+      inetutils
 
       ## File Management
       yazi # Fast terminal file manager
 
       # Shell
       fish # Smart and user-friendly command line shell
-    ]
-    ++ [
-      inputs.helix-master.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
+    # ++ [
+      # inputs.helix-master.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # ];
 
   fonts = {
     packages = with pkgs; [

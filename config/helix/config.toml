@@ -3,7 +3,7 @@ theme = "catppuccin"
 [editor]
 line-number = "relative"
 cursorline = true
-color-modes = true
+# color-modes = true
 # mouse = false
 completion-replace = true
 end-of-line-diagnostics = "hint"
@@ -14,7 +14,7 @@ insert = "bar"
 select = "underline"
 
 [editor.file-picker]
-hidden = false
+# hidden = false
 
 [editor.indent-guides]
 render = true

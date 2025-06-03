@@ -1,7 +1,6 @@
 { me, ... }:
 {
   nix-homebrew = {
-    # Install Homebrew under the default prefix
     enable = true;
 
     # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
@@ -45,6 +44,7 @@
       "keka" # The macOS file archiver
       "zed" # Multiplayer code editor
       "google-chrome" # Web browser
+      "kitty" # GPU-based terminal emulator
     ];
 
     masApps = {
