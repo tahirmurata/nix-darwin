@@ -12,7 +12,7 @@
   time.timeZone = "Asia/Tokyo";
 
   system = {
-    primaryUser = me.username;
+    primaryUser = me.user;
     # Nix state version
     stateVersion = 6;
 
@@ -85,9 +85,9 @@
 
         persistent-apps = [
           { app = "/System/Applications/System Settings.app"; }
-          { app = "/Applications/Google Chrome.app"; }
-          { app = "/Applications/Ghostty.app"; }
-          { app = "/System/Applications/Music.app"; }
+          { app = "/Applications/Firefox Developer Edition.app"; }
+          { app = "/Applications/kitty.app"; }
+          # { app = "/System/Applications/Music.app"; }
         ];
       };
 
@@ -135,6 +135,7 @@
   # this is required if you want to use darwin's default shell - zsh
   programs.zsh.enable = true;
 
-  # Enable fish shell
-  programs.fish.enable = true;
+  users.users.${me.user} = {
+    home = "/Users/${me.user}";
+  };
 }

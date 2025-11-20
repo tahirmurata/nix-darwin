@@ -1,72 +1,55 @@
-{ pkgs, ... }:
 {
-  # The platform the configuration will be used on
-  nixpkgs = {
-    hostPlatform = "aarch64-darwin";
-    config.allowUnfree = true;
-  };
+  me,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  programs.fish = {
+    enable = true;
 
-  # Environment Configuration
-  environment.systemPackages =
-    with pkgs;
-    [
-      # Development Tools
-      ## Text Editors & IDEs
-      helix # Modern modal text editor
+    shellAbbrs = {
+      lg = "lazygit";
+      nu = "nix flake update --commit-lock-file --flake";
+      nr = "sudo nixos-rebuild switch --flake";
+      nsf = "nix-shell --run fish";
+    };
+    shellInit = # fish
+      ''
+        set -g fish_greeting
+        set -g fish_private_mode 1
 
-      ## Version Control
-      gh # GitHub command line interface
-      lazygit # Terminal UI for git
-      jujutsu # A Git-compatible VCS that is both simple and powerful
+        set -g arid_color_pwd      f9e2af
+        set -g arid_color_git      bac2de
+        set -g arid_color_error    f38ba8
+        set -g arid_color_prompt   fab387
+        set -g arid_color_duration 9399b2
+        set -g arid_color_user     cdd6f4
+        set -g arid_color_host     bac2de
 
-      ## Programming Languages
-      ffmpeg
-      hut # A CLI tool for sr.ht.
-      lldb # Next-generation high-performance debugger
-      go # Go programming language
-      gopls # Go language server
-      gotools # Go development utilities
-      nodejs_24 # JavaScript runtime environment
-      pnpm # Fast and efficient JavaScript package manager
-      bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
-      uv # Extremely fast Python package installer and resolver, written in Rust
-      ruff # Extremely fast Python linter and code formatter
+        fish_config theme choose "Catppuccin Mocha"
+      '';
 
-      ## Nix Tools
-      nixd # Nix language server
-      nixfmt-rfc-style # Nix code formatter
-
-      ## Document Processing
-      typst # Modern markup-based typesetting system
-      tinymist # Language service for Typst
-      typstyle # Beautiful and reliable typst code formatter
-
-      # System Utilities
-      ## Monitoring & System Tools
-      btop # System resource monitor
-      fastfetch # System information display tool
-      wgo # Go live reload utility
-      age # Modern file encryption tool
-      ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video
-      inetutils
-
-      ## File Management
-      yazi # Fast terminal file manager
-
-      # Shell
-      fish # Smart and user-friendly command line shell
-    ];
-    # ++ [
-      # inputs.helix-master.packages.${pkgs.stdenv.hostPlatform.system}.default
-    # ];
-
-  fonts = {
-    packages = with pkgs; [
-      jetbrains-mono
-
-      # nerdfonts
-      # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/data/fonts/nerd-fonts/manifests/fonts.json
-      pkgs.nerd-fonts.symbols-only
+    plugins = [
+      {
+        name = "arid";
+        src = pkgs.fetchFromGitLab {
+          owner = "paste";
+          repo = "arid";
+          rev = "b4d5877cace59f09aced02b6da10799bf8bac17a";
+          # sha256 = "";
+        };
+        # src = builtins.path { path = "/home/${me.user}/projects/arid"; };
+      }
     ];
   };
+
+  environment.etc."xdg/config/fish/themes/Catppuccin Mocha.theme".source = "${
+    pkgs.fetchFromGitHub {
+      owner = "catppuccin";
+      repo = "fish";
+      rev = "6a85af2ff722ad0f9fbc8424ea0a5c454661dfed";
+      sha256 = "sha256-Oc0emnIUI4LV7QJLs4B2/FQtCFewRFVp7EDv8GawFsA=";
+    }
+  }/themes/Catppuccin Mocha.theme";
 }

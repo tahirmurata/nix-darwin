@@ -9,31 +9,55 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
-    # helix-master.url = "github:helix-editor/helix/master";
-    # helix-master.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
-    inputs@{
+    {
       nix-darwin,
       nix-homebrew,
+      home-manager,
       ...
-    }:
+    }@inputs:
     let
       me = {
-        username = "acacia";
-        hostname = "AcacianoMacBook-Air";
+        host = "AcacianoMacBook-Air";
+        user = "acacia";
+        git = {
+          name = "Tahir Murata";
+          email = "13326175-paste@users.noreply.gitlab.com";
+        };
       };
     in
     {
-      darwinConfigurations."${me.hostname}" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."${me.host}" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs me; };
         modules = [
           nix-homebrew.darwinModules.nix-homebrew
+          home-manager.darwinModules.home-manager
+          {
+            nixpkgs = {
+              hostPlatform = "aarch64-darwin";
+              config.allowUnfree = true;
+
+              overlays = [
+                (final: prev: {
+                  inherit (prev.lixPackageSets.stable)
+                    nixpkgs-review
+                    nix-eval-jobs
+                    nix-fast-build
+                    colmena
+                    ;
+                })
+              ];
+            };
+          }
+
           ./modules/settings.nix
           ./modules/system.nix
-          ./modules/pkgs.nix
+          ./modules/home.nix
           ./modules/brew.nix
         ];
       };

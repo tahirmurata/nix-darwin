@@ -1,0 +1,236 @@
+{
+  me,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+
+    users.${me.user} = {
+      fonts.fontconfig.enable = true;
+      home = {
+        username = me.user;
+        homeDirectory = "/Users/${me.user}";
+        stateVersion = "25.11";
+
+        packages = with pkgs; [
+          flyctl
+          lazygit
+
+          lldb
+          go
+          bun
+          nil
+          nixfmt-rfc-style
+
+          btop
+          fastfetch
+          wgo
+          age
+          ffmpeg
+          inetutils
+
+          jetbrains-mono
+          nerd-fonts.symbols-only
+        ];
+      };
+
+      programs.fish = {
+        enable = true;
+        shellAbbrs = {
+          lg = "lazygit";
+          nu = "nix flake update --commit-lock-file --flake";
+          nr = "sudo nixos-rebuild switch --flake";
+          nsf = "nix-shell --run fish";
+        };
+
+        shellInit = # fish
+          ''
+            set -g fish_greeting
+            set -g fish_private_mode 1
+
+            set -g arid_color_pwd      f9e2af
+            set -g arid_color_git      bac2de
+            set -g arid_color_error    f38ba8
+            set -g arid_color_prompt   fab387
+            set -g arid_color_duration 9399b2
+            set -g arid_color_user     cdd6f4
+            set -g arid_color_host     bac2de
+
+            fish_config theme choose "Catppuccin Mocha"
+          '';
+
+        plugins = [
+          {
+            name = "arid";
+            src = pkgs.fetchFromGitLab {
+              owner = "paste";
+              repo = "arid";
+              rev = "b4d5877cace59f09aced02b6da10799bf8bac17a";
+              # sha256 = "";
+            };
+            # src = builtins.path { path = "/home/${me.user}/projects/arid"; };
+          }
+        ];
+      };
+
+      xdg.configFile."fish/themes/Catppuccin Mocha.theme" =
+        let
+          catppuccinFish = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "fish";
+            rev = "6a85af2ff722ad0f9fbc8424ea0a5c454661dfed";
+            sha256 = "sha256-Oc0emnIUI4LV7QJLs4B2/FQtCFewRFVp7EDv8GawFsA=";
+          };
+        in
+        {
+          source = "${catppuccinFish}/themes/Catppuccin Mocha.theme";
+        };
+
+      programs.helix = {
+        enable = true;
+        defaultEditor = true;
+
+        extraPackages = with pkgs; [
+          nixd
+          gopls
+          gotools
+          marksman
+          prettierd
+        ];
+
+        settings = {
+          theme = "catppuccin-mocha";
+
+          editor = {
+            line-number = "relative";
+            cursorline = true;
+            completion-replace = true;
+            true-color = true;
+            color-modes = true;
+
+            cursor-shape = {
+              insert = "bar";
+              normal = "block";
+              select = "underline";
+            };
+
+            indent-guides.render = true;
+
+            soft-wrap.enable = true;
+
+            lsp.display-inlay-hints = true;
+
+            end-of-line-diagnostics = "hint";
+            inline-diagnostics.cursor-line = "warning";
+          };
+
+          keys = {
+            normal = {
+              "ret" = "goto_word";
+            };
+            insert = {
+              "j" = {
+                "k" = "normal_mode";
+              };
+            };
+          };
+        };
+
+        languages = {
+          language = [
+            {
+              name = "nix";
+              auto-format = true;
+              formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+            }
+            {
+              name = "go";
+              auto-format = true;
+              formatter = {
+                command = lib.getExe' pkgs.gotools "goimports";
+              };
+            }
+            {
+              name = "markdown";
+              auto-format = true;
+              formatter = {
+                command = lib.getExe pkgs.prettierd;
+                args = [
+                  ".md"
+                ];
+              };
+              language-servers = [
+                "marksman"
+              ];
+            }
+          ];
+        };
+      };
+
+      xdg.configFile."helix/themes/catppuccin-mocha.toml" =
+        let
+          catppuccinHelix = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "helix";
+            rev = "1f13d5e7c72b064699e2c8761f603e4ddd48db8a";
+            # sha256 = "";
+          };
+        in
+        {
+          source = "${catppuccinHelix}/themes/default/catppuccin_mocha.toml";
+        };
+
+      programs.ssh = {
+        enable = true;
+        enableDefaultConfig = false;
+        matchBlocks = {
+          "*".hashKnownHosts = true;
+          "*".addKeysToAgent = "yes";
+        };
+      };
+
+      programs.git = {
+        enable = true;
+
+        settings = {
+          init.defaultBranch = "main";
+          merge.conflictstyle = "zdiff3";
+          commit.verbose = true;
+          user.name = me.git.name;
+          user.email = me.git.email;
+        };
+      };
+
+      programs.direnv = {
+        enable = true;
+        nix-direnv = {
+          enable = true;
+          package = pkgs.nix-direnv;
+        };
+      };
+
+      programs.lazygit = {
+        enable = true;
+      };
+
+      xdg.configFile."lazygit/config.yml" =
+        let
+          catppuccinLazygit = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "lazygit";
+            rev = "c24895902ec2a3cb62b4557f6ecd8e0afeed95d5";
+            sha256 = "sha256-4eJEOEfwLBc4EoQ32TpuhXS3QDvQ8FtT7EgpotEKV7o=";
+          };
+        in
+        {
+          source = "${catppuccinLazygit}/themes-mergable/mocha/yellow.yml";
+        };
+
+      programs.home-manager.enable = true;
+    };
+  };
+}

@@ -1,6 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 {
   nix = {
+    package = pkgs.lixPackageSets.stable.lix;
+
     enable = true;
 
     settings = {
@@ -13,18 +15,15 @@
         "nix-command"
         "flakes"
       ];
+      # Optimize store during build
+      auto-optimise-store = true;
     };
 
     # Automatically run garbage collection
     gc = {
       automatic = true;
-      interval = [
-        {
-          Hour = 12;
-          Minute = 0;
-          Weekday = 6;
-        }
-      ];
+      interval = { Weekday = 0; Hour = 0; Minute = 0; };
+      options = "--delete-older-than 30d";    
     };
   };
 }
