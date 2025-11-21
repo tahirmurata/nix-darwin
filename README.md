@@ -25,19 +25,13 @@ Nix for MacBook Air
        sh -s -- install
    ```
 
-4. Clone the repository into `~/.dotfiles`:
+4. Clone the repository into `~/nix`:
 
    ```sh
-   git clone https://github.com/tahirmurata/nix-darwin.git ~/nix
+   git clone https://gitlab.com/paste/nix.git ~/nix
    ```
 
-5. Run the `link.sh` script:
-
-   ```sh
-   ~/nix/link.sh
-   ```
-
-6. Install `nix-darwin`:
+5. Install `nix-darwin`:
 
    Since darwin-rebuild isn't installed yet, the command uses nix to run darwin-rebuild directly from the nixpkgs repository.
 
