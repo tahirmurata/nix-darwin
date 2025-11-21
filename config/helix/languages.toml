@@ -1,8 +1,0 @@
-[[language]]
-name = "go"
-formatter = { command="goimports" }
-
-[[language]]
-name = "rust"
-formatter = { command = "rustfmt" }
-auto-format = true

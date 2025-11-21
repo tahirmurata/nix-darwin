@@ -1,15 +1,18 @@
-{ me, ... }:
+{ me, inputs, ... }:
 {
   nix-homebrew = {
     enable = true;
 
-    # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
     enableRosetta = true;
 
     # User owning the Homebrew prefix
     user = me.user;
 
-    # Disable adding taps imperatively with `brew tap`
+    # Declarative tap management
+    taps = {
+      "homebrew/homebrew-core" = inputs.homebrew-core;
+      "homebrew/homebrew-cask" = inputs.homebrew-cask;
+    };
     mutableTaps = false;
   };
 
@@ -42,14 +45,13 @@
       "keka"
       "google-chrome"
       "firefox@developer-edition"
-      "kitty"
       "linkliar"
       "ghostty"
     ];
 
     masApps = {
       "Amphetamine" = 937984704;
-      "Klack" = 6446206067; 
+      "Klack" = 6446206067;
     };
   };
 }

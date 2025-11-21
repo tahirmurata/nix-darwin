@@ -86,7 +86,7 @@
         persistent-apps = [
           { app = "/System/Applications/System Settings.app"; }
           { app = "/Applications/Firefox Developer Edition.app"; }
-          { app = "/Applications/kitty.app"; }
+          { app = "/Applications/Ghostty.app"; }
           # { app = "/System/Applications/Music.app"; }
         ];
       };
@@ -133,7 +133,15 @@
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    shellInit = # zsh
+      ''
+        if [ -n "''\${GHOSTTY_RESOURCES_DIR}" ]; then
+          exec fish
+        fi
+      '';
+  };
 
   users.users.${me.user} = {
     home = "/Users/${me.user}";

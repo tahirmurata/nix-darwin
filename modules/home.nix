@@ -6,6 +6,7 @@
 }:
 {
   home-manager = {
+    backupFileExtension = ".bak";
     useGlobalPkgs = true;
     useUserPackages = true;
 
@@ -23,8 +24,6 @@
           lldb
           go
           bun
-          nil
-          nixfmt-rfc-style
 
           btop
           fastfetch
@@ -43,7 +42,7 @@
         shellAbbrs = {
           lg = "lazygit";
           nu = "nix flake update --commit-lock-file --flake";
-          nr = "sudo nixos-rebuild switch --flake";
+          nr = "sudo darwin-rebuild switch --flake";
           nsf = "nix-shell --run fish";
         };
 
@@ -60,6 +59,10 @@
             set -g arid_color_user     cdd6f4
             set -g arid_color_host     bac2de
 
+            if test -n "$GHOSTTY_RESOURCES_DIR"
+                source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
+            end
+
             fish_config theme choose "Catppuccin Mocha"
           '';
 
@@ -70,7 +73,7 @@
               owner = "paste";
               repo = "arid";
               rev = "b4d5877cace59f09aced02b6da10799bf8bac17a";
-              # sha256 = "";
+              sha256 = "sha256-OSZOvSjD03LQxXJDrlgyhDgCiLUg4X2RrLd8lXnCr3Q=";
             };
             # src = builtins.path { path = "/home/${me.user}/projects/arid"; };
           }
@@ -96,6 +99,8 @@
 
         extraPackages = with pkgs; [
           nixd
+          nil
+          nixfmt-rfc-style
           gopls
           gotools
           marksman
@@ -177,11 +182,33 @@
             owner = "catppuccin";
             repo = "helix";
             rev = "1f13d5e7c72b064699e2c8761f603e4ddd48db8a";
-            # sha256 = "";
+            sha256 = "sha256-l9R3wMBLf2jofboGIaH39VnpjxP0lbWvhlexdNXq2co=";
           };
         in
         {
           source = "${catppuccinHelix}/themes/default/catppuccin_mocha.toml";
+        };
+
+      xdg.configFile."ghostty/config" = {
+        text = ''
+          theme = catppuccin_mocha
+          # command = "/etc/profiles/per-user/acacia/bin/fish --login --interactive"
+          shell-integration = none
+          auto-update-channel = tip
+        '';
+      };
+
+      xdg.configFile."ghostty/themes/catppuccin_mocha" =
+        let
+          catppuccinGhostty = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "ghostty";
+            rev = "0eeefa637affe0b5f29d7005cfe4e143c244a781";
+            sha256 = "sha256-j0HCakM9R/xxEjWd5A0j8VVlg0vQivjlAYHRW/4OpGU=";
+          };
+        in
+        {
+          source = "${catppuccinGhostty}/themes/catppuccin-mocha.conf";
         };
 
       programs.ssh = {

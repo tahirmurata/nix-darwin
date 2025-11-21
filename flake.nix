@@ -9,6 +9,15 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -36,6 +45,13 @@
         specialArgs = { inherit inputs me; };
         modules = [
           nix-homebrew.darwinModules.nix-homebrew
+          # Optional: Align homebrew taps config with nix-homebrew
+          (
+            { config, ... }:
+            {
+              homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
+            }
+          )
           home-manager.darwinModules.home-manager
           {
             nixpkgs = {
