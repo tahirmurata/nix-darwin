@@ -2,15 +2,6 @@
 # https://creativecommons.org/publicdomain/zero/1.0/
 
 { inputs, me, ... }:
-
-###################################################################################
-#
-#  macOS's System configuration
-#
-#  All the configuration options are documented here:
-#    https://daiderd.com/nix-darwin/manual/index.html#sec-options
-#
-###################################################################################
 {
   time.timeZone = "Asia/Tokyo";
 
@@ -86,6 +77,7 @@
         wvous-br-corner = 1; # bottom right corner
         wvous-bl-corner = 1; # bottom left corner
 
+        # Dock apps
         persistent-apps = [
           { app = "/System/Applications/System Settings.app"; }
           { app = "/Applications/Firefox Developer Edition.app"; }
@@ -132,7 +124,7 @@
   security.pam.services.sudo_local.touchIdAuth = true;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  # this is required if you want to use darwin's default shell - zsh
+  # This is required if you want to use darwin's default shell - zsh
   programs.zsh = {
     enable = true;
     shellInit = # zsh
@@ -143,6 +135,8 @@
       '';
   };
 
+  # Disable history for bash.
+  # This is due to fish automatically importing `.bash_history`.
   programs.bash = {
     enable = true;
     interactiveShellInit = # bash

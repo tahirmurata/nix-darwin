@@ -259,7 +259,9 @@
           source = "${catppuccinLazygit}/themes-mergable/mocha/yellow.yml";
         };
 
-      programs.home-manager.enable = true;
+      programs.home-manager = {
+        enable = true;
+      };
     };
   };
 }
