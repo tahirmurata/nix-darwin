@@ -192,7 +192,6 @@
       xdg.configFile."ghostty/config" = {
         text = ''
           theme = catppuccin_mocha
-          # command = "/etc/profiles/per-user/acacia/bin/fish --login --interactive"
           shell-integration = none
           auto-update-channel = tip
         '';

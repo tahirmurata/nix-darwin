@@ -45,7 +45,6 @@
         specialArgs = { inherit inputs me; };
         modules = [
           nix-homebrew.darwinModules.nix-homebrew
-          # Optional: Align homebrew taps config with nix-homebrew
           (
             { config, ... }:
             {

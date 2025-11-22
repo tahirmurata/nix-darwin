@@ -87,7 +87,7 @@
           { app = "/System/Applications/System Settings.app"; }
           { app = "/Applications/Firefox Developer Edition.app"; }
           { app = "/Applications/Ghostty.app"; }
-          # { app = "/System/Applications/Music.app"; }
+          { app = "/System/Applications/Music.app"; }
         ];
       };
 
