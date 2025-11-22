@@ -2,7 +2,7 @@
 # https://creativecommons.org/publicdomain/zero/1.0/
 
 {
-  description = "Nix for MacBook Air";
+  description = "Lix (like Nix) for MacBook Air";
 
   inputs = {
     lix = {

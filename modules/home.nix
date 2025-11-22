@@ -44,9 +44,8 @@
         enable = true;
         shellAbbrs = {
           lg = "lazygit";
-          nu = "nix flake update --commit-lock-file --flake";
-          nr = "sudo darwin-rebuild switch --flake";
-          nsf = "nix-shell --run fish";
+          nu = "nix flake update --commit-lock-file --flake ~/nix";
+          nr = "sudo darwin-rebuild switch --flake ~/nix";
         };
 
         shellInit = # fish
