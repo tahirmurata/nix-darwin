@@ -1,6 +1,6 @@
-# Nix-Darwin
+# Nix config
 
-Nix for MacBook Air
+Lix (like Nix) for MacBook Air
 
 ## Usage
 
@@ -16,13 +16,12 @@ Nix for MacBook Air
    softwareupdate --install-rosetta --agree-to-license
    ```
 
-3. Install Nix
+3. Install Lix
 
    Make sure to enable full disk access for your terminal.
 
    ```sh
-   curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
-       sh -s -- install
+   curl -sSf -L https://install.lix.systems/lix | sh -s -- install
    ```
 
 4. Clone the repository into `~/nix`:
@@ -38,7 +37,3 @@ Nix for MacBook Air
    ```sh
    nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/nix
    ```
-
-## License
-
-This repository is released into the public domain under the [Unlicense license](UNLICENSE)

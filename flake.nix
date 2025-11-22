@@ -1,3 +1,6 @@
+# Any copyright is dedicated to the Public Domain.
+# https://creativecommons.org/publicdomain/zero/1.0/
+
 {
   description = "Nix for MacBook Air";
 
@@ -20,6 +23,17 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    lix = {
+      url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+      flake = false;
+    };
+
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.lix.follows = "lix";
+    };
   };
 
   outputs =
@@ -27,6 +41,7 @@
       nix-darwin,
       nix-homebrew,
       home-manager,
+      lix-module,
       ...
     }@inputs:
     let
@@ -44,6 +59,8 @@
         system = "aarch64-darwin";
         specialArgs = { inherit inputs me; };
         modules = [
+          lix-module.nixosModules.default
+
           nix-homebrew.darwinModules.nix-homebrew
           (
             { config, ... }:
@@ -51,24 +68,8 @@
               homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
             }
           )
-          home-manager.darwinModules.home-manager
-          {
-            nixpkgs = {
-              hostPlatform = "aarch64-darwin";
-              config.allowUnfree = true;
 
-              overlays = [
-                (final: prev: {
-                  inherit (prev.lixPackageSets.stable)
-                    nixpkgs-review
-                    nix-eval-jobs
-                    nix-fast-build
-                    colmena
-                    ;
-                })
-              ];
-            };
-          }
+          home-manager.darwinModules.home-manager
 
           ./modules/settings.nix
           ./modules/system.nix

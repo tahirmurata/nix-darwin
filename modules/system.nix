@@ -1,3 +1,6 @@
+# Any copyright is dedicated to the Public Domain.
+# https://creativecommons.org/publicdomain/zero/1.0/
+
 { inputs, me, ... }:
 
 ###################################################################################
@@ -118,13 +121,10 @@
     };
   };
 
-  # Set default editor to helix
   environment.variables = {
-    # Set default modal editor to Helix
     EDITOR = "hx";
     VISUAL = "hx";
 
-    # Set do not track
     DO_NOT_TRACK = "1";
   };
 
@@ -142,6 +142,16 @@
         fi
       '';
   };
+
+  programs.bash = {
+    enable = true;
+    interactiveShellInit = # bash
+      ''
+        unset HISTFILE
+      '';
+  };
+
+  programs.fish.enable = true;
 
   users.users.${me.user} = {
     home = "/Users/${me.user}";
