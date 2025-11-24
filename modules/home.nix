@@ -195,6 +195,8 @@
         text = ''
           theme = catppuccin_mocha
           shell-integration = none
+          mouse-hide-while-typing
+          cursor-click-to-move
           auto-update-channel = tip
         '';
       };
