@@ -145,6 +145,8 @@
       '';
   };
 
+  services.openssh.enable = true;
+
   programs.fish.enable = true;
 
   users.users.${me.user} = {

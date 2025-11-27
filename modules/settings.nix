@@ -1,10 +1,25 @@
 # Any copyright is dedicated to the Public Domain.
 # https://creativecommons.org/publicdomain/zero/1.0/
 
-{ ... }:
+{ pkgs, ... }:
 {
   nix = {
     enable = true;
+
+    linux-builder = {
+      enable = true;
+      package = pkgs.darwin.linux-builder-x86_64;
+      ephemeral = true;
+      config = {
+        virtualisation = {
+          darwin-builder = {
+            diskSize = 40 * 1024;
+            memorySize = 8 * 1024;
+          };
+          cores = 6;
+        };
+      };
+    };
 
     settings = {
       trusted-users = [
