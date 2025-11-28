@@ -28,7 +28,7 @@ Lix (like Nix) for MacBook Air
    git clone https://gitlab.com/paste/nix.git ~/nix
    ```
 
-5. Install `nix-darwin` [^2]
+5. Install `nix-darwin` [^2] [^3]
 
    ```sh
    nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/nix
@@ -45,3 +45,5 @@ Lix (like Nix) for MacBook Air
 [^1]: When installing make sure you give your terminal full disk access.
 
 [^2]: Since darwin-rebuild isn't installed yet, we use `nix run` to call darwin-rebuild from nixpkgs.
+
+[^3]: Since this is the first time, remove the configuration for linux-builder as it needs linux-builder to build.
