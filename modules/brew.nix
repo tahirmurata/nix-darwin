@@ -34,6 +34,7 @@
 
     casks = [
       "visual-studio-code"
+      "zed"
       "iina"
       "alt-tab"
       "transmission"

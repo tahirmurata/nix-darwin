@@ -30,9 +30,10 @@
         "nix-command"
         "flakes"
       ];
+    };
 
-      # Runs during build
-      auto-optimise-store = true;
+    optimise = {
+      automatic = true;
     };
 
     gc = {
