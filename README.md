@@ -1,6 +1,6 @@
 # Nix config
 
-Lix (like Nix) for MacBook Air
+Nix for MacBook Air
 
 ## Installation
 
@@ -16,10 +16,11 @@ Lix (like Nix) for MacBook Air
    softwareupdate --install-rosetta --agree-to-license
    ```
 
-3. Install Lix [^1]
+3. Install Nix [^1]
 
    ```sh
-   curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+   curl --proto '=https' --tlsv1.2 -sSf -L https://artifacts.nixos.org/experimental-installer | \
+     sh -s -- install
    ```
 
 4. Clone the repository into `~/nix`
