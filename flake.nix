@@ -2,7 +2,7 @@
 # https://creativecommons.org/publicdomain/zero/1.0/
 
 {
-  description = "Lix (like Nix) for MacBook Air";
+  description = "Nix for MacBook Air";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
