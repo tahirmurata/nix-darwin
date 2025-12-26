@@ -32,8 +32,8 @@
 
         # Several spelling related settings
         NSAutomaticCapitalizationEnabled = false;
-        NSAutomaticInlinePredictionEnabled = false;
         NSAutomaticDashSubstitutionEnabled = false;
+        NSAutomaticInlinePredictionEnabled = false;
         NSAutomaticPeriodSubstitutionEnabled = false;
         NSAutomaticQuoteSubstitutionEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
