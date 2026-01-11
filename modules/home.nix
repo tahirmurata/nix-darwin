@@ -102,7 +102,7 @@
         extraPackages = with pkgs; [
           nixd
           nil
-          nixfmt-rfc-style
+          nixfmt
           gopls
           gotools
           marksman
@@ -152,7 +152,7 @@
             {
               name = "nix";
               auto-format = true;
-              formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+              formatter.command = lib.getExe pkgs.nixfmt;
             }
             {
               name = "go";
