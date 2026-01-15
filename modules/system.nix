@@ -5,8 +5,16 @@
 {
   time.timeZone = "Asia/Tokyo";
 
+  networking = {
+    applicationFirewall.enable = true;
+    applicationFirewall.enableStealthMode = true;
+    applicationFirewall.allowSigned = true;
+    applicationFirewall.allowSignedApp = true;
+  };
+
   system = {
     primaryUser = me.user;
+
     # Nix state version
     stateVersion = 6;
 
@@ -22,6 +30,12 @@
 
     defaults = {
       menuExtraClock.Show24Hour = true; # Show 24 hour clock
+
+      hitoolbox.AppleFnUsageType = "Do Nothing";
+
+      loginwindow.DisableConsoleAccess = false;
+      loginwindow.GuestEnabled = false;
+      loginwindow.LoginwindowText = "beware.";
 
       NSGlobalDomain = {
         AppleInterfaceStyle = "Dark"; # Set dark mode
@@ -109,6 +123,23 @@
         EnableTilingByEdgeDrag = true; # Disable draggin windows to screen edges to tile them
         EnableTilingOptionAccelerator = false; # Disable holding alt to tile windows
         EnableTopTilingByEdgeDrag = true; # Disable dragging windows to the menu bar to fill the screen
+      };
+
+      CustomUserPreferences = {
+        # Disable siri
+        "com.apple.Siri" = {
+          "UAProfileCheckingStatus" = 0;
+          "siriEnabled" = 0;
+        };
+        # Disable personalized ads
+        "com.apple.AdLib" = {
+          allowApplePersonalizedAdvertising = false;
+        };
+        "com.apple.desktopservices" = {
+          # Avoid creating .DS_Store files on network or USB volumes
+          DSDontWriteNetworkStores = true;
+          DSDontWriteUSBStores = true;
+        };
       };
     };
   };
