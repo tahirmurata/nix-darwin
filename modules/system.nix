@@ -94,8 +94,8 @@
         # Dock apps
         persistent-apps = [
           { app = "/System/Applications/System Settings.app"; }
-          { app = "/Applications/Safari.app"; }
-          { app = "/Applications/Ghostty.app"; }
+          { app = "/Applications/Firefox Developer Edition.app"; }
+          { app = "/Applications/kitty.app"; }
           { app = "/System/Applications/Music.app"; }
         ];
       };

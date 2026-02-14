@@ -61,9 +61,9 @@
             set -g arid_color_user     cdd6f4
             set -g arid_color_host     bac2de
 
-            if test -n "$GHOSTTY_RESOURCES_DIR"
-                source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
-            end
+            # if test -n "$GHOSTTY_RESOURCES_DIR"
+            #     source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
+            # end
 
             fish_config theme choose "Catppuccin Mocha"
           '';
@@ -189,6 +189,42 @@
         in
         {
           source = "${catppuccinHelix}/themes/default/catppuccin_mocha.toml";
+        };
+
+      xdg.configFile."kitty/kitty.conf" = {
+        text = ''
+          include theme.conf
+
+          font_family      family="Maple Mono" features="+cv02"
+          font_size        13.0
+          bold_font        auto
+          italic_font      auto
+          bold_italic_font auto
+
+          tab_bar_min_tabs            1
+          tab_bar_edge                bottom
+          tab_bar_style               powerline
+          tab_powerline_style         slanted
+          tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''\}
+
+          macos_titlebar_color background
+          mouse_hide_wait -1.0
+
+          shell /etc/profiles/per-user/acacia/bin/fish --login --interactive
+        '';
+      };
+
+      xdg.configFile."kitty/theme.conf" =
+        let
+          catppuccinGhostty = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "kitty";
+            rev = "43098316202b84d6a71f71aaf8360f102f4d3f1a";
+            sha256 = "sha256-akRkdq8l2opGIg3HZd+Y4eky6WaHgKFQ5+iJMC1bhnQ=";
+          };
+        in
+        {
+          source = "${catppuccinGhostty}/themes/mocha.conf";
         };
 
       xdg.configFile."ghostty/config" = {
