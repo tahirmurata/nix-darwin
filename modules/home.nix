@@ -281,6 +281,9 @@
 
       programs.lazygit = {
         enable = true;
+        settings = {
+          gui.language = "en";
+        };
       };
 
       xdg.configFile."lazygit/config.yml" =
