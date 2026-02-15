@@ -36,6 +36,7 @@
           inetutils
 
           jetbrains-mono
+          maple-mono.truetype
           nerd-fonts.symbols-only
         ];
       };
@@ -195,7 +196,7 @@
         text = ''
           include theme.conf
 
-          font_family      family="Maple Mono" features="+cv02"
+          font_family      family="Maple Mono" features="+cv02 +cv35"
           font_size        13.0
           bold_font        auto
           italic_font      auto
