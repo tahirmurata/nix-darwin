@@ -34,17 +34,16 @@
 
     casks = [
       "visual-studio-code"
-      "zed"
       "iina"
       "alt-tab"
       "transmission"
       "orbstack"
-      "altserver"
       "keka"
       "google-chrome"
       "firefox@developer-edition"
       "linkliar"
       "ghostty"
+      "kitty"
     ];
 
     masApps = {
