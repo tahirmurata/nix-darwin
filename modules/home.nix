@@ -47,6 +47,7 @@
           lg = "lazygit";
           nu = "nix flake update --commit-lock-file --flake ~/nix";
           nr = "sudo darwin-rebuild switch --flake ~/nix";
+          h = "hledger -s";
         };
 
         shellInit = # fish
