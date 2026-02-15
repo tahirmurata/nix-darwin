@@ -33,9 +33,13 @@
 
       hitoolbox.AppleFnUsageType = "Do Nothing";
 
-      loginwindow.DisableConsoleAccess = false;
-      loginwindow.GuestEnabled = false;
-      loginwindow.LoginwindowText = "beware.";
+      loginwindow = {
+        DisableConsoleAccess = false;
+        GuestEnabled = false;
+        LoginwindowText = null;
+        SHOWFULLNAME = true;
+        # TODO: Add option to remove username and profile picture.
+      };
 
       NSGlobalDomain = {
         AppleInterfaceStyle = "Dark"; # Set dark mode
