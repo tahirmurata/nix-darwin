@@ -159,9 +159,7 @@
             {
               name = "go";
               auto-format = true;
-              formatter = {
-                command = lib.getExe' pkgs.gotools "goimports";
-              };
+              formatter.command = lib.getExe' pkgs.gotools "goimports";
             }
             {
               name = "markdown";
