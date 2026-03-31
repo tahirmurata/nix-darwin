@@ -44,6 +44,7 @@
       "linkliar"
       "ghostty"
       "kitty"
+      "tailscale-app"
     ];
 
     masApps = {
