@@ -30,10 +30,8 @@
         "nix-command"
         "flakes"
       ];
-    };
 
-    optimise = {
-      automatic = true;
+      auto-optimise-store = true;
     };
 
     gc = {
