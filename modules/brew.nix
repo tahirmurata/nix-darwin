@@ -44,7 +44,12 @@
       "linkliar"
       "ghostty"
       "kitty"
-      "tailscale-app"
+
+    brews = [
+      {
+        name = "tailscale";
+        start_service = true;
+      }
     ];
 
     masApps = {
