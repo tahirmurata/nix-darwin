@@ -210,7 +210,7 @@
           macos_titlebar_color background
           mouse_hide_wait -1.0
 
-          shell /etc/profiles/per-user/acacia/bin/fish --login --interactive
+          shell /etc/profiles/per-user/${me.user}/bin/fish --login --interactive
         '';
       };
 

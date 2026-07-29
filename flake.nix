@@ -38,8 +38,8 @@
     }@inputs:
     let
       me = {
-        host = "AcacianoMacBook-Air";
-        user = "acacia";
+        host = "Lisans-MacBook-Air";
+        user = "messiah";
         git = {
           name = "Tahir Murata";
           email = "13326175-paste@users.noreply.gitlab.com";
