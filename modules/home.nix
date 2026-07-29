@@ -18,7 +18,7 @@
       home = {
         username = me.user;
         homeDirectory = "/Users/${me.user}";
-        stateVersion = "25.11";
+        stateVersion = "26.05";
 
         packages = with pkgs; [
           flyctl
