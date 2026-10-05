@@ -263,9 +263,10 @@
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
-        matchBlocks = {
-          "*".hashKnownHosts = true;
-          "*".addKeysToAgent = "yes";
+
+        settings."*" = {
+          HashKnownHosts = true;
+          AddKeysToAgent = "yes";
         };
       };
 
