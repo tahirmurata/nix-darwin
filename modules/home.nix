@@ -5,6 +5,7 @@
   me,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
@@ -12,6 +13,8 @@
     backupFileExtension = ".bak";
     useGlobalPkgs = true;
     useUserPackages = true;
+
+    extraSpecialArgs = { inherit inputs; };
 
     users.${me.user} = {
       fonts.fontconfig.enable = true;
@@ -197,8 +200,7 @@
         text = ''
           include theme.conf
 
-          font_family      family="Maple Mono" features="+cv02 +cv35"
-          font_size        13.0
+          font_family      family="MonoLisaCode Trial"
           bold_font        auto
           italic_font      auto
           bold_italic_font auto
