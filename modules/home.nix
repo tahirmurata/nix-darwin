@@ -101,6 +101,8 @@
         enable = true;
         defaultEditor = true;
 
+        package = inputs.helix-master.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
         extraPackages = with pkgs; [
           nixd
           nil
