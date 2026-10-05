@@ -85,8 +85,8 @@
             src = pkgs.fetchFromGitLab {
               owner = "paste";
               repo = "arid";
-              rev = "b4d5877cace59f09aced02b6da10799bf8bac17a";
-              sha256 = "sha256-OSZOvSjD03LQxXJDrlgyhDgCiLUg4X2RrLd8lXnCr3Q=";
+              rev = "9484544aed1a3b33598ddb650eee5b1b7df6fb65";
+              sha256 = "sha256-1kkBIjgFxHoDjg/Hoc++wdnNuJxtBV6NR6WFXcWfqQA=";
             };
             # src = builtins.path { path = "/home/${me.user}/projects/arid"; };
           }
