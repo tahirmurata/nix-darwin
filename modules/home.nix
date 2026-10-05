@@ -24,17 +24,23 @@
         stateVersion = "26.05";
 
         packages = with pkgs; [
-          flyctl
           lazygit
 
           lldb
           go
           bun
+          uv
+          ty
+          ruff
+          nodejs
+          pnpm
 
+          awscli2
           btop
           fastfetch
           wgo
           age
+          libwebp
           ffmpeg
           inetutils
 
