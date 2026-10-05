@@ -32,28 +32,23 @@
     };
 
     casks = [
-      "visual-studio-code"
-      "iina"
-      "alt-tab"
-      "transmission"
-      "orbstack"
-      "keka"
+      "firefox"
+      "discord"
       "google-chrome"
-      "firefox@developer-edition"
-      "linkliar"
-      "ghostty"
+      "iina"
+      "jetbrains-toolbox"
+      "keka"
       "kitty"
-
-    brews = [
-      {
-        name = "tailscale";
-        start_service = true;
-      }
+      "linkliar"
+      "logseq"
+      "orbstack"
+      "transmission"
+      "visual-studio-code"
     ];
 
     masApps = {
       "Amphetamine" = 937984704;
-      "Klack" = 6446206067;
+      "uBlock Origin Lite" = 6745342698;
     };
   };
 }
